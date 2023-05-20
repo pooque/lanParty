@@ -5,11 +5,7 @@ int main()
     in=fopen("d.in","rt");
     out=fopen("r.out","wt");
 
-    //Cerinta 1 - creare lista
-    Team* first_team;
-    create_list_ofTeams(&first_team,in,out);
-
-    //Cerinta 2 -
+    lanParty(in,out);
 
     fclose(in);
     fclose(out);

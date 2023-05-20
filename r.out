@@ -1,6 +1,6 @@
 Aveti 20 echipe.
 
-5 Cei 3 muschetari
+[1]5 Cei 3 muschetari
 Marinescu Mirela 9
 Costache Diana 5
 Muntean Irina 9
@@ -8,7 +8,7 @@ Georgescu Oana 5
 Nedelcu Roxana 4
 Average score: 6.400
 
-5 Winner
+[2]5 Winner
 Alexandru Lucian 9
 Dan Ionel 8
 Suciu Raluca 9
@@ -16,7 +16,7 @@ Neacsu Madalina 8
 Baciu Iuliana 6
 Average score: 8.000
 
-5 Mistretii Atomici
+[3]5 Mistretii Atomici
 Paun Monica 7
 Zaharia Claudia 3
 Rotaru Loredana 10
@@ -24,7 +24,7 @@ Marcu Sorin 2
 Ghita Cosmin 9
 Average score: 6.200
 
-5 Elixir Junior
+[4]5 Elixir Junior
 Costea Corina 3
 Cretu Ciprian 9
 Szabo Ana 4
@@ -32,7 +32,7 @@ David Dumitru 1
 Diaconu Ramona 7
 Average score: 4.800
 
-5 Black swans
+[5]5 Black swans
 Calin Liliana 9
 Luca Radu 6
 Stancu Razvan 2
@@ -40,7 +40,7 @@ Dragan Vlad 1
 Rus Laura 10
 Average score: 5.600
 
-5 Legalize
+[6]5 Legalize
 Stoian Florina 0
 Avram Ovidiu 4
 Bucur Iulia 9
@@ -48,7 +48,7 @@ Filip Viorel 10
 Pavel Valentina 0
 Average score: 4.600
 
-5 Pufuletii
+[7]5 Pufuletii
 Rosu Alin 1
 Olteanu Claudiu 4
 Nita Carmen 2
@@ -56,7 +56,7 @@ Nistor Catalina 10
 Iacob Robert 9
 Average score: 5.200
 
-5 Savage
+[8]5 Savage
 Iancu Costel 6
 Simion Dan 3
 Dumitrescu Andreea-Elena 4
@@ -64,7 +64,7 @@ Roman Camelia 4
 Nicolae Oana-Maria 4
 Average score: 4.200
 
-5 Konfetti
+[9]5 Konfetti
 Nagy Georgeta 7
 Manea Laurentiu 5
 Ene Mircea 5
@@ -72,7 +72,7 @@ Lungu Elena-Cristina 6
 Petre Alina-Elena 6
 Average score: 5.800
 
-5 The Skyrynners
+[10]5 The Skyrynners
 Coman Silviu 7
 Preda Dragos 2
 Tanase Alina-Maria 2
@@ -80,7 +80,7 @@ Lupu Paul 6
 Muresan Maria-Cristina 8
 Average score: 5.000
 
-5 MO si F.O.C.A
+[11]5 MO si F.O.C.A
 Cojocaru Petru 6
 Iordache Liviu 7
 Dobre Attila 9
@@ -88,7 +88,7 @@ Ivan Adina 4
 Craciun Andreea-Maria 10
 Average score: 7.200
 
-5 Shooting Stars
+[12]5 Shooting Stars
 Balan Ileana 0
 Voicu Alina-Mihaela 1
 Grigore Victor 4
@@ -96,7 +96,7 @@ Mocanu Vasilica 10
 Vlad Cristina-Elena 7
 Average score: 4.400
 
-5 Defending Champs
+[13]5 Defending Champs
 Dragomir Rodica 10
 Badea Cristina-Maria 2
 Enache Marinela 8
@@ -104,7 +104,7 @@ Neagu Veronica 7
 Ionita Silvia 9
 Average score: 7.200
 
-5 The Abusement Park
+[14]5 The Abusement Park
 Cristea Alexandra-Maria 7
 Barbu Zoltan 3
 Anghel Roxana-Elena 10
@@ -112,7 +112,7 @@ Ungureanu Violeta 7
 Dinu Anca-Maria 10
 Average score: 7.400
 
-5 Chunky Monkees
+[15]5 Chunky Monkees
 Andrei Sergiu 10
 Ion Viorica 3
 Sandu Alexandru-Ionut 10
@@ -120,7 +120,7 @@ Stanci Ancuta 0
 Tudor Ioana-Alexandra 6
 Average score: 5.800
 
-5 Chafing the Dream
+[16]5 Chafing the Dream
 Moldovan Emilia 4
 Florea Andreea-Cristina 0
 Toma Ioana-Maria 5
@@ -128,7 +128,7 @@ Oprea Zsolt 8
 Ilie Ionut-Alexandru 10
 Average score: 5.400
 
-5 Ibuprofen and Ben Gay
+[17]5 Ibuprofen and Ben Gay
 Munteanu Eugen 0
 Vasile Teodora 2
 Lazar Istvan 10
@@ -136,7 +136,7 @@ Stefan Mihai-Alexandru 9
 Marin Timea 4
 Average score: 5.000
 
-5 The Big Egos
+[18]5 The Big Egos
 Constantin Ilie 7
 Serban Lavinia 3
 Mihai Levente 5
@@ -144,7 +144,7 @@ Rusu Cornelia 7
 Ionescu Luminita 8
 Average score: 6.000
 
-5 Vandelay Industries
+[19]5 Vandelay Industries
 Ciobanu Stefania 1
 Matei Andrea 3
 Gheorghe Tudor 6
@@ -152,10 +152,147 @@ Stoica Cornel 0
 Stan Octavian 4
 Average score: 2.800
 
-5 The Waiver Wire
+[20]5 The Waiver Wire
 Dumitru Iulian 1
 Radu Simona 2
 Pop Anamaria 6
 Popescu Anca 10
 Popa Florentina 6
 Average score: 5.000
+
+[1]5 Cei 3 muschetari
+Marinescu Mirela 9
+Costache Diana 5
+Muntean Irina 9
+Georgescu Oana 5
+Nedelcu Roxana 4
+Average score: 6.400
+
+[2]5 Winner
+Alexandru Lucian 9
+Dan Ionel 8
+Suciu Raluca 9
+Neacsu Madalina 8
+Baciu Iuliana 6
+Average score: 8.000
+
+[3]5 Mistretii Atomici
+Paun Monica 7
+Zaharia Claudia 3
+Rotaru Loredana 10
+Marcu Sorin 2
+Ghita Cosmin 9
+Average score: 6.200
+
+[4]5 Elixir Junior
+Costea Corina 3
+Cretu Ciprian 9
+Szabo Ana 4
+David Dumitru 1
+Diaconu Ramona 7
+Average score: 4.800
+
+[5]5 Black swans
+Calin Liliana 9
+Luca Radu 6
+Stancu Razvan 2
+Dragan Vlad 1
+Rus Laura 10
+Average score: 5.600
+
+[6]5 Pufuletii
+Rosu Alin 1
+Olteanu Claudiu 4
+Nita Carmen 2
+Nistor Catalina 10
+Iacob Robert 9
+Average score: 5.200
+
+[7]5 Konfetti
+Nagy Georgeta 7
+Manea Laurentiu 5
+Ene Mircea 5
+Lungu Elena-Cristina 6
+Petre Alina-Elena 6
+Average score: 5.800
+
+[8]5 The Skyrynners
+Coman Silviu 7
+Preda Dragos 2
+Tanase Alina-Maria 2
+Lupu Paul 6
+Muresan Maria-Cristina 8
+Average score: 5.000
+
+[9]5 MO si F.O.C.A
+Cojocaru Petru 6
+Iordache Liviu 7
+Dobre Attila 9
+Ivan Adina 4
+Craciun Andreea-Maria 10
+Average score: 7.200
+
+[10]5 Defending Champs
+Dragomir Rodica 10
+Badea Cristina-Maria 2
+Enache Marinela 8
+Neagu Veronica 7
+Ionita Silvia 9
+Average score: 7.200
+
+[11]5 The Abusement Park
+Cristea Alexandra-Maria 7
+Barbu Zoltan 3
+Anghel Roxana-Elena 10
+Ungureanu Violeta 7
+Dinu Anca-Maria 10
+Average score: 7.400
+
+[12]5 Chunky Monkees
+Andrei Sergiu 10
+Ion Viorica 3
+Sandu Alexandru-Ionut 10
+Stanci Ancuta 0
+Tudor Ioana-Alexandra 6
+Average score: 5.800
+
+[13]5 Chafing the Dream
+Moldovan Emilia 4
+Florea Andreea-Cristina 0
+Toma Ioana-Maria 5
+Oprea Zsolt 8
+Ilie Ionut-Alexandru 10
+Average score: 5.400
+
+[14]5 Ibuprofen and Ben Gay
+Munteanu Eugen 0
+Vasile Teodora 2
+Lazar Istvan 10
+Stefan Mihai-Alexandru 9
+Marin Timea 4
+Average score: 5.000
+
+[15]5 The Big Egos
+Constantin Ilie 7
+Serban Lavinia 3
+Mihai Levente 5
+Rusu Cornelia 7
+Ionescu Luminita 8
+Average score: 6.000
+
+[16]5 The Waiver Wire
+Dumitru Iulian 1
+Radu Simona 2
+Pop Anamaria 6
+Popescu Anca 10
+Popa Florentina 6
+Average score: 5.000
+
+Cei 3 muschetari                 -                           Winner
+Mistretii Atomici                -                    Elixir Junior
+Black swans                      -                        Pufuletii
+Konfetti                         -                   The Skyrynners
+MO si F.O.C.A                    -                 Defending Champs
+The Abusement Park               -                   Chunky Monkees
+Chafing the Dream                -            Ibuprofen and Ben Gay
+The Big Egos                     -                  The Waiver Wire

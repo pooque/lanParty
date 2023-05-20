@@ -1,10 +1,6 @@
 #include "player.h"
-void create_list_ofTeams(Team** first_team,FILE* in,FILE* out)
+void create_list_ofTeams(Team** first_team,FILE* in,FILE* out,int n_ofTeams)
 {
-    int n;
-    fscanf(in,"%d",&n);
-    fprintf(out,"Aveti %d echipe.\n",n);
-
     Team *team=(Team*)malloc(sizeof(Team));
     *first_team=team;
 
@@ -17,7 +13,7 @@ void create_list_ofTeams(Team** first_team,FILE* in,FILE* out)
 
     team->next=NULL;
 
-    enter_Teams(first_team,n,in,out);
+    enter_Teams(first_team,n_ofTeams,in,out);
 }
 void read_n_ofPlayers(Team** team,FILE* in)
 {
@@ -28,6 +24,7 @@ void read_name_ofTeam(Team** team,FILE* in)
 {
     (*team)->name_ofTeam=(char*)malloc(33*sizeof(char));
     fgets((*team)->name_ofTeam,33*sizeof(char),in);
+    (*team)->name_ofTeam[strlen((*team)->name_ofTeam)-1]='\0';
 }
 void add_toTeam(int n_ofPlayers,Player** first_player,FILE* in)
 {
@@ -86,9 +83,11 @@ void enter_Teams(Team** team,int n_ofTeams,FILE* in,FILE* out)
 }
 void display_team(Team* team,FILE* out)
 {
+    int i=1;
     while(team!=NULL)
     {
-        fprintf(out,"\n%d %s",team->n_ofPlayers,team->name_ofTeam);
+
+        fprintf(out,"\n[%d]%d %s\n",i,team->n_ofPlayers,team->name_ofTeam);
         Player *player=team->player;
         while(player!=NULL)
         {
@@ -96,6 +95,7 @@ void display_team(Team* team,FILE* out)
             player=player->next;
         }
         fprintf(out,"Average score: %.3f\n",team->team_score);
+        i++;
         team=team->next;
     }
 }
