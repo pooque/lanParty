@@ -29,12 +29,15 @@ void makePair(Team* team,match_1v1** match)
     (*match)->t1=team;
     (*match)->t2=team->next;
 }
-void display_matches(match_1v1* match,FILE* out)
+void display_matches(match_1v1* match,FILE* out,int round)
 {
+    //int i=1;
     fprintf(out,"\n");
     match_1v1 *aux=match;
+    fprintf(out,"--- ROUND NO:%d\n",round);
     while(aux!=NULL)
     {
+
         int x=strlen(aux->t1->name_ofTeam),y=strlen(aux->t2->name_ofTeam);
         fprintf(out,"%s",aux->t1->name_ofTeam);
         for(int i=0;i<33-x;i++)
@@ -43,6 +46,7 @@ void display_matches(match_1v1* match,FILE* out)
         for(int i=0;i<33-y;i++)
             fprintf(out," ");
         fprintf(out,"%s\n",aux->t2->name_ofTeam);
+
         aux=aux->next;
     }
 }

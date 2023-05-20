@@ -39,7 +39,7 @@ float min_Score(Team* team);
 void purge_Teams(Team** team,int *n_ofTeams);
 
 void set_Matches(Team* team,match_1v1** firstMatch,match_1v1** lastMatch);
-void display_matches(match_1v1* match,FILE* out);
+void display_matches(match_1v1* match,FILE* out,int round);
 
-void create_Stack(match_1v1* match,stackTeams** winners,stackTeams** losers);
-void display_Stack(stackTeams* Stack);
+void create_Stack(match_1v1** match,stackTeams** winners,stackTeams** losers);
+void purge_Matches(match_1v1** match,stackTeams** winners,stackTeams** losers,int *n_ofTeams,FILE* out);

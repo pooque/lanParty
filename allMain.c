@@ -16,8 +16,9 @@ void lanParty(FILE* in,FILE* out)
     //Cerinta 3
     match_1v1 *first_Match,*last_Match;
     set_Matches(first_team,&first_Match,&last_Match);
-    display_matches(first_Match,out);
+    //display_matches(first_Match,out);
 
     stackTeams *winners=NULL,*losers=NULL;
-    create_Stack(first_Match,&winners,&losers);
+    //create_Stack(&first_Match,&winners,&losers);
+    purge_Matches(&first_Match,&winners,&losers,&n,out);
 }
