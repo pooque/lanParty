@@ -80,14 +80,14 @@ void display_winners(stackTeams* Stack,FILE* out,int round)
         for(int k=0; k<33-strlen(i->team->name_ofTeam); k++)
             printf(" ");
             printf("- ");
-        printf("%f\n",i->team->team_score);
+        printf("%.2f\n",i->team->team_score);
         i=i->previous;
 
     }
 }
 void create_Stack(match_1v1** match,stackTeams** winners,stackTeams** losers)
 {
-    printf("sike");
+
     while((*match)!=NULL)
     {
         if((*match)->t1->team_score >= (*match)->t2->team_score)
@@ -120,6 +120,8 @@ void purge_Matches(match_1v1** match,stackTeams** winners,stackTeams** losers,in
 
     while((*n_ofTeams)>1)
     {
+        *winners=NULL;
+        *losers=NULL;
         display_matches(first_Match,out,round);
         create_Stack(&first_Match,winners,losers);
         //delete_stack(losers);
