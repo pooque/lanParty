@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1684341674 source:c:\users\andrei\desktop\tema pa big boi\lanparty\player.c
+	"player.h"
+
+1684612788 c:\users\andrei\desktop\tema pa big boi\lanparty\player.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+
+1684588338 source:c:\users\andrei\desktop\tema pa big boi\lanparty\main.c
+	"player.h"
+
+1684341277 source:c:\users\andrei\desktop\tema pa big boi\lanparty\points.c
+	"player.h"
+
+1684612511 source:c:\users\andrei\desktop\tema pa big boi\lanparty\1v1.c
+	"player.h"
+
+1684681401 source:c:\users\andrei\desktop\tema pa big boi\lanparty\winners_losers.c
+	"player.h"
+
+1684619138 source:c:\users\andrei\desktop\tema pa big boi\lanparty\allmain.c
+	"player.h"
+

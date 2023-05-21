@@ -1,30 +1,32 @@
 #include "player.h"
-void makePair_fromStack(stackTeams* stack,match_1v1** match)
+void makePair_fromStack(stackTeams** stack,match_1v1** match)
 {
-    (*match)->t1=stack;
-    (*match)->t2=stack->previous;
+    (*match)->t1=(*stack);
+    (*match)->t2=(*stack)->previous;
+
+    stackTeams *aux=*stack;
+    (*stack)=(*stack)->previous->previous;
+    free(aux);
 }
-void set_Matches_fromStack(stackTeams* winners,match_1v1** firstMatch,stackTeams** lastMatch)
+void set_Matches_fromStack(stackTeams** winners,match_1v1** firstMatch,match_1v1** lastMatch)
 {
-    (*firstMatch)=(match_1v1*)malloc(sizeof(match_1v1));
-    stackTeams *aux=winners;
+    match_1v1 *newMatch=(match_1v1*)malloc(sizeof(match_1v1));
+    makePair_fromStack(winners,&newMatch);
+    newMatch->next=NULL;
 
-    makePair_fromStack(winners,&firstMatch);
-
-    aux=aux->previous->previous;
+    *firstMatch=newMatch;
     *lastMatch=*firstMatch;
 
-    while(aux!=NULL)
+    while(winners!=NULL)
     {
         match_1v1 *newMatch=(match_1v1*)malloc(sizeof(match_1v1));
-
         makePair_fromStack(winners,&newMatch);
 
         newMatch->next=NULL;
-        (*lastMatch)->previous=newMatch;
+        (*lastMatch)->next=newMatch;
         (*lastMatch)=newMatch;
 
-        aux=aux->previous->previous;
+        //aux=aux->previous->previous;
     }
 
 }
@@ -49,6 +51,7 @@ void delete_stack(stackTeams** stack)
         printf(" SEARAHAGIALERGA");
         stackTeams *aux=(*stack);
         (*stack)=(*stack)->previous;
+        //if(aux!=NULL)
         free(aux);
     }
 }
@@ -66,24 +69,25 @@ void display_Stack(stackTeams* Stack)
         i=i->previous;
     }
 }
-void display_winners(stackTeams* Stack,FILE* out)
+void display_winners(stackTeams* Stack,FILE* out,int round)
 {
-    int j=1;
+    printf("WINNERS OF ROUND NO:%d\n",round);
     stackTeams *i=Stack;
     while(i!=NULL)
     {
-        fprintf(out,"WINNERS OF ROUND NO:%d",j);
-        fprintf(out,"%s\n",i->team->name_ofTeam);
+
+        printf("%s",i->team->name_ofTeam);
         for(int k=0; k<33-strlen(i->team->name_ofTeam); k++)
-            fprintf(out," ");
-        fprintf(out,"%f\n",i->team->team_score);
+            printf(" ");
+            printf("- ");
+        printf("%f\n",i->team->team_score);
         i=i->previous;
-        j++;
+
     }
 }
 void create_Stack(match_1v1** match,stackTeams** winners,stackTeams** losers)
 {
-    printf("pula");
+    printf("sike");
     while((*match)!=NULL)
     {
         if((*match)->t1->team_score >= (*match)->t2->team_score)
@@ -111,29 +115,27 @@ void create_Stack(match_1v1** match,stackTeams** winners,stackTeams** losers)
 }
 void purge_Matches(match_1v1** match,stackTeams** winners,stackTeams** losers,int *n_ofTeams,FILE* out)
 {
-    //match_1v1 *aux=*match;
-    printf("muie");
     int round=1;
+    match_1v1 *first_Match=*match,*last_Match;
+
     while((*n_ofTeams)>1)
     {
-        display_matches(*match,out,round);
-        printf(" displayed matches %d,",round);
-        create_Stack(match,&winners,&losers);
-        printf(" stacked them stacks");
-        delete_stack(losers);
-        printf(" pantene shampoo");
+        display_matches(first_Match,out,round);
+        create_Stack(&first_Match,winners,losers);
+        //delete_stack(losers);
         //delete_matches(match);
+        printf("\n");
+        display_winners(*winners,out,round);
+        printf("\n");
 
-        display_winners(*winners,out);
 
-        match_1v1 *first_Match,*last_Match;
-
-        set_Matches_fromStack(*winners,&first_Match,&last_Match);
-
-        delete_stack(winners);
-
+        set_Matches_fromStack(winners,&first_Match,&last_Match);
+        printf(" CANDieiSALARIUmyLOVE");
+        //delete_stack(winners);
         round++;
+        //printf("round s-a facut %d ",round);
 
         (*n_ofTeams)/=2;
+        //printf("avem %d echipe ",*n_ofTeams);
     }
 }
