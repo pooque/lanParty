@@ -1,15 +1,17 @@
 #include "player.h"
 void makePair_fromStack(stackTeams** stack,match_1v1** match)
 {
-    (*match)->t1=(*stack);
-    (*match)->t2=(*stack)->previous;
+    (*match)->t1=(*stack)->team;
+    (*match)->t2=(*stack)->previous->team;
 
     stackTeams *aux=*stack;
     (*stack)=(*stack)->previous->previous;
+    free(aux->previous);
     free(aux);
 }
 void set_Matches_fromStack(stackTeams** winners,match_1v1** firstMatch,match_1v1** lastMatch)
 {
+
     match_1v1 *newMatch=(match_1v1*)malloc(sizeof(match_1v1));
     makePair_fromStack(winners,&newMatch);
     newMatch->next=NULL;
@@ -17,10 +19,11 @@ void set_Matches_fromStack(stackTeams** winners,match_1v1** firstMatch,match_1v1
     *firstMatch=newMatch;
     *lastMatch=*firstMatch;
 
-    while(winners!=NULL)
+    while(*winners!=NULL)
     {
         match_1v1 *newMatch=(match_1v1*)malloc(sizeof(match_1v1));
         makePair_fromStack(winners,&newMatch);
+        //printf(" IMIMIROASEACIOMAG");
 
         newMatch->next=NULL;
         (*lastMatch)->next=newMatch;
@@ -48,7 +51,7 @@ void delete_stack(stackTeams** stack)
 {
     while((*stack)!=NULL)
     {
-        printf(" SEARAHAGIALERGA");
+        //printf(" SEARAHAGIALERGA");
         stackTeams *aux=(*stack);
         (*stack)=(*stack)->previous;
         //if(aux!=NULL)
@@ -60,29 +63,28 @@ void add_toWhich(stackTeams** winners,stackTeams** losers,Team* toWinners,Team* 
     add_toStack(winners,toWinners);
     add_toStack(losers,toLosers);
 }
-void display_Stack(stackTeams* Stack)
+void display_Stack(stackTeams* Stack,FILE* out)
 {
     stackTeams *i=Stack;
     while(i!=NULL)
     {
-        printf("%s\n",i->team->name_ofTeam);
+        fprintf(out,"%s\n",i->team->name_ofTeam);
         i=i->previous;
     }
 }
 void display_winners(stackTeams* Stack,FILE* out,int round)
 {
-    printf("WINNERS OF ROUND NO:%d\n",round);
+    fprintf(out,"WINNERS OF ROUND NO:%d\n",round);
     stackTeams *i=Stack;
     while(i!=NULL)
     {
 
-        printf("%s",i->team->name_ofTeam);
+        fprintf(out,"%s",i->team->name_ofTeam);
         for(int k=0; k<33-strlen(i->team->name_ofTeam); k++)
-            printf(" ");
-            printf("- ");
-        printf("%.2f\n",i->team->team_score);
+            fprintf(out," ");
+        fprintf(out,"- ");
+        fprintf(out,"%.2f\n",i->team->team_score);
         i=i->previous;
-
     }
 }
 void create_Stack(match_1v1** match,stackTeams** winners,stackTeams** losers)
@@ -102,13 +104,13 @@ void create_Stack(match_1v1** match,stackTeams** winners,stackTeams** losers)
             add_toWhich(winners,losers,(*match)->t2,(*match)->t1);
             delete_matches(match);
         }
-        printf(" cupcak");
+        //printf(" cupcak");
     }
 
     //match_1v1 *aux=(*match);
     //aux=aux->next;
 
-    printf(" CHINESE");
+    //printf(" CHINESE");
     //display_Stack(*winners);
     //printf("\n\n");
     //display_Stack(*losers);
@@ -126,13 +128,14 @@ void purge_Matches(match_1v1** match,stackTeams** winners,stackTeams** losers,in
         create_Stack(&first_Match,winners,losers);
         //delete_stack(losers);
         //delete_matches(match);
-        printf("\n");
+        fprintf(out,"\n");
         display_winners(*winners,out,round);
-        printf("\n");
+        //display_winners(*winners,out,round);
+        fprintf(out,"\n");
 
 
         set_Matches_fromStack(winners,&first_Match,&last_Match);
-        printf(" CANDieiSALARIUmyLOVE");
+        //printf(" CANDieiSALARIUmyLOVE");
         //delete_stack(winners);
         round++;
         //printf("round s-a facut %d ",round);

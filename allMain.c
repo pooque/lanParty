@@ -11,7 +11,7 @@ void lanParty(FILE* in,FILE* out)
 
     //Cerinta 2 - eliminat echipe
     purge_Teams(&first_team,&n);
-    display_team(first_team,out);
+    //display_team(first_team,out);
 
     //Cerinta 3
     match_1v1 *first_Match,*last_Match;

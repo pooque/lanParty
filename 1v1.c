@@ -32,7 +32,7 @@ void makePair(Team* team,match_1v1** match)
 void display_matches(match_1v1* match,FILE* out,int round)
 {
     //int i=1;
-    fprintf(out,"\n");
+    printf("\n");
     match_1v1 *aux=match;
     fprintf(out,"--- ROUND NO:%d\n",round);
     while(aux!=NULL)
