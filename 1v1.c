@@ -1,6 +1,7 @@
 #include "player.h"
 void set_Matches(Team* team,match_1v1** firstMatch,match_1v1** lastMatch)
 {
+    ///creeare coada de meciuri
     (*firstMatch)=(match_1v1*)malloc(sizeof(match_1v1));
 
     Team *aux=team;
@@ -26,13 +27,14 @@ void set_Matches(Team* team,match_1v1** firstMatch,match_1v1** lastMatch)
 }
 void makePair(Team* team,match_1v1** match)
 {
+    ///creeare pereche
     (*match)->t1=team;
     (*match)->t2=team->next;
 }
 void display_matches(match_1v1* match,FILE* out,int round)
 {
-    //int i=1;
-    printf("\n");
+    ///afisat meciuri
+    fprintf(out,"\n");
     match_1v1 *aux=match;
     fprintf(out,"--- ROUND NO:%d\n",round);
     while(aux!=NULL)

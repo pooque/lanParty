@@ -1,6 +1,7 @@
 #include "player.h"
 float AVG_score(Team* team)
 {
+    ///calculare scor de echipa
     Player* aux=team->player;
     float S=0,k=0;
     while(aux!=NULL)
@@ -13,6 +14,7 @@ float AVG_score(Team* team)
 }
 float min_Score(Team* team)
 {
+    ///determinare scor minim
     Team* aux=team;
     float score=aux->team_score;
     while(aux!=NULL)
@@ -25,12 +27,14 @@ float min_Score(Team* team)
 }
 int find_N_max(int x)
 {
+    ///determinare 2^k maxim
     int N;
     for(N=1; N*2<x; N*=2);
     return N;
 }
 void purge_Teams(Team** team,int *n_ofTeams)
 {
+    ///eliminare echipe cu scor minim
     int N_MAX = find_N_max(*n_ofTeams);
     while(*n_ofTeams != N_MAX)
     {
@@ -56,12 +60,14 @@ void purge_Teams(Team** team,int *n_ofTeams)
 }
 void delete_firstTeam(Team** team)
 {
+    ///stergere prima echipa
     Team* aux=*team;
     aux=aux->next;
     free(aux);
 }
 void delete_Team(Team** team)
 {
+    ///stergere echipa
     Team* aux=*team;
     aux->next=aux->next->next;
     free(aux);
