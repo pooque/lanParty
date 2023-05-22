@@ -135,14 +135,12 @@ void purge_Matches(match_1v1** match,stackTeams** winners,stackTeams** losers,in
 {
     ///gasire final winner + top 8
     int round=1;
+
     match_1v1 *first_Match=*match,*last_Match;
-    //*top8=NULL;
+
     (*n_ofTeams)/=2;
     while((*n_ofTeams)>1)
     {
-
-
-
         *winners=NULL;
         *losers=NULL;
 

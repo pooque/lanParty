@@ -2,17 +2,8 @@
 //void display
 void display_BST(BST* root,FILE* out)
 {
-    //printf("PRODANCA ");
-    //fprintf(out,"\n");
-    //fseek(out, 0, SEEK_SET);
-    //if(root==NULL)
-        //printf("i dipped ");
     if(root)
     {
-        //if(root==NULL)
-        //printf("TEPUPSUZETAMEA ");
-
-        //printf("EUAMOCARIERA ");
         display_BST(root->right,out);
         fprintf(out,"%s",root->team->name_ofTeam);
         for(int i=0;i<33-strlen(root->team->name_ofTeam);i++)
@@ -24,10 +15,8 @@ void display_BST(BST* root,FILE* out)
 }
 void delete_fromTop(Team** top8)
 {
-    //printf("red ");
     Team *aux=*top8;
     (*top8)=(*top8)->next;
-    //printf("midnights ");
     free(aux);
 }
 void add_toTree(BST** root,Team** top8)
@@ -46,9 +35,7 @@ void add_toLeaf(BST** node,Team** top8)
 {
     BST *newNode=(BST*)malloc(sizeof(BST));
     newNode->team=*top8;
-    //create_newRoot(top8,root);
     newNode->left=newNode->right=NULL;
-    //printf("cupcac ");
     delete_fromTop(top8);
     (*node)=newNode;
 }
@@ -58,6 +45,5 @@ void create_BST(BST** root,Team** top8)
     while((*top8)!=NULL)
     {
         add_toTree(root,top8);
-        //printf("man fuck dem kidz ");
     }
 }

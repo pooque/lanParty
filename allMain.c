@@ -23,7 +23,6 @@ void lanParty(FILE* in,FILE* out)
     ///CERINTA 4 - BST
     BST *root;
     create_BST(&root,&top8);
-    //printf("cu pzida matii platesc");
     fprintf(out,"\n");
     display_BST(root,out);
 }
