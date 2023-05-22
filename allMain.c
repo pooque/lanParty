@@ -3,7 +3,7 @@ void lanParty(FILE* in,FILE* out)
 {
     int n;
     fscanf(in,"%d",&n);
-    fprintf(out,"Aveti %d echipe.\n",n);
+    //fprintf(out,"Aveti %d echipe.\n",n);
 
     ///Cerinta 1 - creare lista
     Team* first_team;
@@ -17,5 +17,13 @@ void lanParty(FILE* in,FILE* out)
     set_Matches(first_team,&first_Match,&last_Match);
 
     stackTeams *winners=NULL,*losers=NULL;
-    purge_Matches(&first_Match,&winners,&losers,&n,out);
+    Team *top8;
+    purge_Matches(&first_Match,&winners,&losers,&n,out,&top8);
+
+    ///CERINTA 4 - BST
+    BST *root;
+    create_BST(&root,&top8);
+    //printf("cu pzida matii platesc");
+    fprintf(out,"\n");
+    display_BST(root,out);
 }

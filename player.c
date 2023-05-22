@@ -87,19 +87,19 @@ void enter_Teams(Team** team,int n_ofTeams,FILE* in,FILE* out)
 }
 void display_team(Team* team,FILE* out)
 {
-    int i=1;
+    //int i=1;
     while(team!=NULL)
     {
 
-        fprintf(out,"\n[%d]%d %s\n",i,team->n_ofPlayers,team->name_ofTeam);
-        Player *player=team->player;
-        while(player!=NULL)
+        fprintf(out,"%s\n",team->name_ofTeam);
+        //Player *player=team->player;
+        /*while(player!=NULL)
         {
             fprintf(out,"%s %s %d\n",player->firstName,player->secondName,player->points);
             player=player->next;
-        }
-        fprintf(out,"Average score: %.3f\n",team->team_score);
-        i++;
+        }*/
+        //fprintf(out,"Average score: %.3f\n",team->team_score);
+        //i++;
         team=team->next;
     }
 }

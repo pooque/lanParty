@@ -131,17 +131,17 @@ void final_round(match_1v1** match,FILE* out,int round)
         display_finalWinner((*match)->t2,out,round);
     }
 }
-void purge_Matches(match_1v1** match,stackTeams** winners,stackTeams** losers,int *n_ofTeams,FILE* out)
+void purge_Matches(match_1v1** match,stackTeams** winners,stackTeams** losers,int *n_ofTeams,FILE* out,Team** top8)
 {
     ///gasire final winner + top 8
     int round=1;
     match_1v1 *first_Match=*match,*last_Match;
-    Team *top8=NULL;
+    //*top8=NULL;
     (*n_ofTeams)/=2;
     while((*n_ofTeams)>1)
     {
-        if((*n_ofTeams)==8)
-            create_top8(&top8,*winners);
+
+
 
         *winners=NULL;
         *losers=NULL;
@@ -149,6 +149,11 @@ void purge_Matches(match_1v1** match,stackTeams** winners,stackTeams** losers,in
         display_matches(first_Match,out,round);
         create_Stack(&first_Match,winners,losers);
 
+        if((*n_ofTeams)==8)
+            {
+            *top8=NULL;
+            addTo_top8(top8,*winners);
+            display_top8(*top8);}
         fprintf(out,"\n");
         display_winners(*winners,out,round);
 
