@@ -40,7 +40,6 @@ void purge_Teams(Team** team,int *n_ofTeams)
     while(*n_ofTeams != N_MAX)
     {
         float P_MIN=min_Score(*team);
-        //printf("  %.2f   ",P_MIN);
         while(((*team)!=NULL) && ((*team)->team_score == P_MIN) && (*n_ofTeams != N_MAX))
         {
             delete_firstTeam(team);
@@ -59,7 +58,6 @@ void purge_Teams(Team** team,int *n_ofTeams)
                 aux=aux->next;
         }
     }
-    //printf("is over biciz");
 
 }
 void delete_firstTeam(Team** team)
@@ -73,8 +71,6 @@ void delete_Team(Team** team)
 {
     ///stergere echipa
     Team *aux=(*team)->next;
-
     (*team)->next=(*team)->next->next;
-
     free(aux);
 }
