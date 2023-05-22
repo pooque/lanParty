@@ -25,8 +25,8 @@ void read_n_ofPlayers(Team** team,FILE* in)
 void read_name_ofTeam(Team** team,FILE* in)
 {
     ///citire nume echipa
-    (*team)->name_ofTeam=(char*)malloc(33*sizeof(char));
-    fgets((*team)->name_ofTeam,33*sizeof(char),in);
+    (*team)->name_ofTeam=(char*)malloc(50*sizeof(char));
+    fgets((*team)->name_ofTeam,50*sizeof(char),in);
     (*team)->name_ofTeam[strlen((*team)->name_ofTeam)-1]='\0';
 }
 void add_toTeam(int n_ofPlayers,Player** first_player,FILE* in)
@@ -51,8 +51,8 @@ void add_toTeam(int n_ofPlayers,Player** first_player,FILE* in)
 void read_dataAboutPlayer(Player** player,FILE* in)
 {
     ///citire date despre jucator
-    (*player)->firstName=(char*)malloc(33*sizeof(char));
-    (*player)->secondName=(char*)malloc(33*sizeof(char));
+    (*player)->firstName=(char*)malloc(50*sizeof(char));
+    (*player)->secondName=(char*)malloc(50*sizeof(char));
 
     fscanf(in,"%s",(*player)->firstName);
     fscanf(in,"%s",(*player)->secondName);

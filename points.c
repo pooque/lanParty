@@ -2,7 +2,7 @@
 float AVG_score(Team* team)
 {
     ///calculare scor de echipa
-    Player* aux=team->player;
+    Player *aux=team->player;
     float S=0,k=0;
     while(aux!=NULL)
     {
@@ -15,7 +15,7 @@ float AVG_score(Team* team)
 float min_Score(Team* team)
 {
     ///determinare scor minim
-    Team* aux=team;
+    Team *aux=team;
     float score=aux->team_score;
     while(aux!=NULL)
     {
@@ -36,9 +36,11 @@ void purge_Teams(Team** team,int *n_ofTeams)
 {
     ///eliminare echipe cu scor minim
     int N_MAX = find_N_max(*n_ofTeams);
+
     while(*n_ofTeams != N_MAX)
     {
         float P_MIN=min_Score(*team);
+        //printf("  %.2f   ",P_MIN);
         while(((*team)!=NULL) && ((*team)->team_score == P_MIN) && (*n_ofTeams != N_MAX))
         {
             delete_firstTeam(team);
@@ -57,18 +59,22 @@ void purge_Teams(Team** team,int *n_ofTeams)
                 aux=aux->next;
         }
     }
+    //printf("is over biciz");
+
 }
 void delete_firstTeam(Team** team)
 {
     ///stergere prima echipa
-    Team* aux=*team;
-    aux=aux->next;
+    Team *aux=*team;
+    (*team)=(*team)->next;
     free(aux);
 }
 void delete_Team(Team** team)
 {
     ///stergere echipa
-    Team* aux=*team;
-    aux->next=aux->next->next;
+    Team *aux=(*team)->next;
+
+    (*team)->next=(*team)->next->next;
+
     free(aux);
 }

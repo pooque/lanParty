@@ -2,8 +2,10 @@
 //void display
 void display_BST(BST* root,FILE* out)
 {
+    int i=1;
     if(root)
     {
+        //printf("%d ",i);
         display_BST(root->right,out);
         fprintf(out,"%s",root->team->name_ofTeam);
         for(int i=0;i<33-strlen(root->team->name_ofTeam);i++)
