@@ -29,7 +29,7 @@ int find_N_max(int x)
 {
     ///determinare 2^k maxim
     int N;
-    for(N=1; N*2<x; N*=2);
+    for(N=1; N*2<=x; N*=2);
     return N;
 }
 void purge_Teams(Team** team,int *n_ofTeams)

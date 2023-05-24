@@ -79,9 +79,9 @@ void display_winners(stackTeams* Stack,FILE* out,int round)
     while(i!=NULL)
     {
         fprintf(out,"%s",i->team->name_ofTeam);
-        for(int k=0; k<33-strlen(i->team->name_ofTeam); k++)
+        for(int k=0; k<34-strlen(i->team->name_ofTeam); k++)
             fprintf(out," ");
-        fprintf(out,"- ");
+        fprintf(out,"-  ");
         fprintf(out,"%.2f\n",i->team->team_score);
         i=i->previous;
     }
@@ -91,7 +91,7 @@ void create_Stack(match_1v1** match,stackTeams** winners,stackTeams** losers)
     ///adaugarea fiecarei echipe in stiva corespunzatoare + eliberarea cozii de meciuri
     while((*match)!=NULL)
     {
-        if((*match)->t1->team_score >= (*match)->t2->team_score)
+        if((*match)->t1->team_score > (*match)->t2->team_score)
         {
             (*match)->t1->team_score++;
             add_toWhich(winners,losers,(*match)->t1,(*match)->t2);
@@ -108,11 +108,11 @@ void create_Stack(match_1v1** match,stackTeams** winners,stackTeams** losers)
 void display_finalWinner(Team* team,FILE* out,int round)
 {
     ///afisare final winner
-    fprintf(out,"\nWINNER OF ROUND NO:%d\n",round);
+    fprintf(out,"\nWINNERS OF ROUND NO:%d\n",round);
     fprintf(out,"%s",team->name_ofTeam);
-    for(int k=0; k<33-strlen(team->name_ofTeam); k++)
+    for(int k=0; k<34-strlen(team->name_ofTeam); k++)
         fprintf(out," ");
-    fprintf(out,"- ");
+    fprintf(out,"-  ");
     fprintf(out,"%.2f\n",team->team_score);
 }
 void final_round(match_1v1** match,FILE* out,int round)
@@ -151,7 +151,7 @@ void purge_Matches(match_1v1** match,stackTeams** winners,stackTeams** losers,in
         {
             *top8=NULL;
             addTo_top8(top8,*winners);
-            display_top8(*top8);
+            //display_top8(*top8);
         }
         fprintf(out,"\n");
         display_winners(*winners,out,round);

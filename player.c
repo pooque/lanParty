@@ -27,7 +27,10 @@ void read_name_ofTeam(Team** team,FILE* in)
     ///citire nume echipa
     (*team)->name_ofTeam=(char*)malloc(50*sizeof(char));
     fgets((*team)->name_ofTeam,50*sizeof(char),in);
+    (*team)->name_ofTeam[strlen((*team)->name_ofTeam)-2]='\0';
+    if((*team)->name_ofTeam[strlen((*team)->name_ofTeam)-1]==' ')
     (*team)->name_ofTeam[strlen((*team)->name_ofTeam)-1]='\0';
+
 }
 void add_toTeam(int n_ofPlayers,Player** first_player,FILE* in)
 {

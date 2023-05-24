@@ -1,0 +1,26 @@
+#include "player.h"
+void display_List(FILE* out,Team* List)
+{
+    fprintf(out,"\n");
+    while(List!=NULL)
+    {
+        fprintf(out,"%s\n",List->name_ofTeam);
+    }
+}
+void add_toList(Team** List,Team* team)
+{
+    Team *newNode=(Team*)malloc(sizeof(Team));
+    newNode=team;
+    newNode->next=NULL;
+    (*List)->next=newNode;
+    (*List)=newNode;
+}
+void add_BST_toList(BST* root,Team** List)
+{
+    if(root)
+    {
+        display_BST(root->right,out);
+        add_toList(List,root->team);
+        display_BST(root->left,out);
+    }
+}

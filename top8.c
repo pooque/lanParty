@@ -18,11 +18,3 @@ void create_top8(Team** top8,stackTeams* team)
 {
     addTo_top8(top8,team);
 }
-void display_top8(Team* top8)
-{
-    Team *i=top8;
-    while(i!=NULL)
-    {
-        i=i->next;
-    }
-}
