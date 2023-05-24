@@ -36,7 +36,10 @@ typedef struct tree_BST
     struct tree_BST *right,*left;
 }BST;
 
-void lanParty(FILE* in,FILE* out);
+void task1(FILE* in,FILE* out,Team** first_team,int n);
+void task2(FILE* in,FILE* out,Team** first_team,int* n);
+void task3(FILE* in,FILE* out,Team* first_team,int *n,match_1v1** first_Match,match_1v1** last_Match,stackTeams* winners,stackTeams* losers,Team** top8);
+void task4(FILE* out,BST** root,Team** top8);
 
 void create_list_ofTeams(Team** first_team,FILE* in,FILE* out,int n_ofTeams);
 

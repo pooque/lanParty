@@ -23,6 +23,13 @@ void add_toTree(BST** root,Team** top8)
 {
     if(*root)
     {
+        if((*top8)->team_score == (*root)->team->team_score)
+        {
+            if(strcmp((*top8)->name_ofTeam,(*root)->team->name_ofTeam)<0)
+                add_toTree(&(*root)->left,top8);
+            else
+                add_toTree(&(*root)->right,top8);
+        }
         if((*top8)->team_score < (*root)->team->team_score)
             add_toTree(&(*root)->left,top8);
         else

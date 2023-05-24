@@ -82,14 +82,13 @@ void enter_Teams(Team** team,int n_ofTeams,FILE* in,FILE* out)
         (*team)=new_team;
 
     }
-    Team *aux=*team;
-    display_team(aux,out);
+    //Team *aux=*team;
+    //display_team(aux,out);
 }
 void display_team(Team* team,FILE* out)
 {
     while(team!=NULL)
     {
-
         fprintf(out,"%s\n",team->name_ofTeam);
         team=team->next;
     }

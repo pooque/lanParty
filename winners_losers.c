@@ -148,10 +148,11 @@ void purge_Matches(match_1v1** match,stackTeams** winners,stackTeams** losers,in
         create_Stack(&first_Match,winners,losers);
 
         if((*n_ofTeams)==8)
-            {
+        {
             *top8=NULL;
             addTo_top8(top8,*winners);
-            display_top8(*top8);}
+            display_top8(*top8);
+        }
         fprintf(out,"\n");
         display_winners(*winners,out,round);
 
